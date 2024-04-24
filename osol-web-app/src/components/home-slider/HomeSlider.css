@@ -1,4 +1,4 @@
-*,
+/* *,
 *::before,
 *::after {
   margin: 0;
@@ -107,7 +107,7 @@ body {
 .swiper-slide-shadow-left,
 .swiper-slide-shadow-right {
   display: none;
-}
+} */
 
 .slider-controler {
   position: relative;
@@ -167,7 +167,7 @@ body {
 
 .slider-controler .slider-arrow::after {
   content: '';
-}
+} 
 
 .swiper-pagination {
   position: relative;
@@ -181,4 +181,40 @@ body {
 
 .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
+} 
+/*
+
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+*/
+
+/* body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+} */
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
 }

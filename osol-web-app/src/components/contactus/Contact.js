@@ -114,7 +114,7 @@ function Contact() {
                     </Label>
                     <Input type="textarea" name="message" id="message" value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Enter your message" required />
                 </FormGroup>
-                <Button color="primary" type="submit" disabled={!isFormValid()} >Submit</Button>
+                <Button color="burlywood" type="submit" disabled={!isFormValid()} >Submit</Button>
                 {isSubmitted && <p className='contact_text'>Thank you for contacting us, we will get back to you as soon as possible!</p>}
             </Form>
         </div>

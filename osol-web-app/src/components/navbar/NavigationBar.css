@@ -30,14 +30,14 @@ nav a:hover {
 }
 
 nav a {
-  color: darkolivegreen;
+  color: burlywood;
   text-decoration: none;
   margin: 0 2rem;
   transition: all 0.3s ease;
 }
 
 .logo-navbar{
-  width: 100px;
+  width: 160px;
   margin-left: 370px;
   padding: 10px;
 }
@@ -76,7 +76,7 @@ nav {
   float: left;
 }
 
-@media only screen and (max-width: 475px) {
+@media only screen and (max-width: 290px) {
   .camfoot-title{
     font-size: small;
     font-weight: 800;
@@ -86,28 +86,64 @@ nav {
   }
 }
 
-@media only screen and (max-width: 780px) and (min-width: 480px) {
-  .camfoot-title{
-    font-size: small;
-    font-weight: 800;
-    margin-left: 250px;
-    margin-top: 2%;
-    color: darkgreen;
+@media only screen and (max-width: 700px) and (min-width: 300px) {
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .three-bars-pos{
+    display: flex;
+    color: burlywood;
+  }
+  .changing-color{
+    color: burlywood;
+  }
+
+  header nav{
+    /* background-color: white; */
+    position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    z-index: 9999; /* any high value to ensure it's above other elements */
+
+  
+  }
+
+  header .show-nav{
+    background-color: #10121A;;
+    transform: translateY(100vh);
+  }
+
+  nav .nav-close-btn {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+	}
+
+	nav a {
+		font-size: 1.5rem;
+	}
+
+  .logo-navbar{
+    width: 160px;
+    padding: 20px;
+    margin-left: 70px;
   }
 }
 
-@media only screen and (max-width: 1028px) and (min-width: 785px) {
-  .camfoot-title{
-    font-size: 20px;
-    font-weight: 800;
-    margin-left: 350px;
-    margin-top: 20px;
-    color: darkgreen;
-  }
-}
 
 
-@media only screen and (max-width: 1028px) {
+@media only screen and (min-width: 710px) {
   header .nav-btn {
     visibility: visible;
     opacity: 1;
@@ -117,13 +153,12 @@ nav {
     display: flex;
     color: darkgreen;
   }
-
   .changing-color{
-    color: darkgreen;
+    color: burlywood;
   }
 
   header nav{
-    background-color: white;
+    /* background-color: white; */
     position: fixed;
 		top: -100vh;
 		left: 0;
@@ -142,19 +177,20 @@ nav {
   }
 
   .logo-navbar{
-    width: 100px;
-    margin-left: 100px;
-    padding: 10px;
+    width: 160px;
+    padding: 20px;
+    margin-left: 260px;
   }
 
   header .show-nav{
+    background-color: #10121A;;
     transform: translateY(100vh);
   }
 
   nav .nav-close-btn {
 		position: absolute;
-		top: 2rem;
-		right: 20rem;
+		top: 1rem;
+		right: 1rem;
 	}
 
 	nav a {

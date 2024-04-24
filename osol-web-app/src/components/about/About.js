@@ -7,294 +7,180 @@ import "./About.css";
 
 const About = () => {
   return (
-  <div>
     <div>
-    <Typography
-            variant="h4"
-            component="div"
-            gutterBottom
-            style={{
-              color: "#012f01",
-              fontWeight: "bold",
-              marginBottom: "20px",
-            }}
-          >
-            About Us
-          </Typography>
-      <Typography
-        variant="h6"
-        component="div"
-        className="text-center"
-        gutterBottom
-        style={{
-          color: "#012f01",
-          fontWeight: "bold",
-          marginBottom: "20px",
-        }}
-      >
-        Our Founders
-      </Typography>
+      <div>
+        <Typography
+          variant="h4"
+          component="div"
+          gutterBottom
+          style={{
+            color: "#012f01",
+            fontWeight: "bold",
+            marginTop: "30px",
+            marginLeft: "20px",
+          }}
+        >
+          About Us
+        </Typography>
 
-      <div className="container-fluid">
-        <div className="row ml-4 mr-4">
-          <div className="col-lg-4 col-md-6 col-sm-12 mb-4 h-100">
-            <div className="card p-2">
-              <img
-                src={backgroundImage}
-                className="img-fluid"
-                alt="Responsive image"
-              />
-              <div className="card-body">
-                <h5 className="card-title header-card">President: Eric</h5>
-                <p className="card-text body-card">
-                  You are supporting ethical practices from small local farms
-                  and butchers who limit waste creating a more sustainable
-                  system
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-12 mb-4 h-100">
-            <div className="card p-2">
-              <img
-                src={backgroundImage}
-                className="img-fluid"
-                alt="Responsive image"
-              />
-              <div className="card-body">
-                <h5 className="card-title header-card">Vice-President: Max</h5>
-                <p className="card-text body-card">
-                  The by product of reducing the time your meat is cut and sold,
-                  sourcing from local farms that are grass fed and pasture
-                  raised results in a fresher, tastier cut of meat
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-12 mb-4 h-100">
-            <div className="card p-2">
-              <img
-                src={backgroundImage}
-                className="img-fluid"
-                alt="Responsive image"
-              />
-              <div className="card-body">
-                <h5 className="card-title header-card">Treasurer: Paul Sidze</h5>
-                <p className="card-text body-card">
-                  You know where your meat is coming from
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: "100vh",
+            // backgroundImage: `url(${backgroundImage})`,
+            // backgroundPosition: "center",
+            // backgroundSize: "cover",
+            // backgroundRepeat: "no-repeat",
+          }}
+        >
+          <Card
+            variant="outlined"
+            sx={{ minWidth: 275, maxWidth: 800, margin: 3 }}
+          >
+            <CardContent>
+              <Typography
+                variant="h6"
+                component="div"
+                gutterBottom
+                style={{
+                  color: "burlywood",
+                  fontWeight: "bold",
+                  marginBottom: "20px",
+                }}
+              >
+                Who are we?
+              </Typography>
+              <Typography
+                variant="body1"
+                color="text.secondary"
+                style={{ fontSize: "15px", lineHeight: "1.6", color: "#333" }}
+              >
+                <bold>What is Lorem Ipsum?</bold> Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqu
+                <br />
+                <br />
+                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                consectetur, adipisci velit, sed quia non numquam eius modi
+                tempora incidunt ut labore et dolore magnam aliquam quaerat
+                voluptatem. Ut enim ad minima veniam, quis nostrum
+                exercitationem ullam corporis suscipit laboriosam, nisi ut
+                aliquid ex ea commodi consequatur?
+                <br />
+                <br />
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et quasi architecto beatae
+                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                voluptas sit aspernatur aut odit aut fugit, sed quia
+                consequuntur magni dolores eos qui ratione voluptatem sequi
+                nesciunt.
+              </Typography>
+              <br />
+              <Typography
+                variant="h6"
+                component="div"
+                gutterBottom
+                style={{
+                  color: "burlywood",
+                  fontWeight: "bold",
+                  marginBottom: "20px",
+                }}
+              >
+                What do we value?
+              </Typography>
+
+              <Box
+                sx={{
+                  padding: "10px",
+                  margin: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "5px",
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  color="text.secondary"
+                  style={{
+                    fontSize: "14px",
+                    lineHeight: "1.6",
+                    color: "#333",
+                  }}
+                >
+                  <Typography variant="body1" style={{ fontWeight: "bold" }}>
+                    Quality
+                  </Typography>
+                  By prioritizing quality in every aspect of the design and
+                  production process, the company ensures that its accessories
+                  are durable, functional, and aesthetically pleasing, providing
+                  customers with products they can trust and enjoy.
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  padding: "10px",
+                  margin: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "5px",
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  color="text.secondary"
+                  style={{
+                    fontSize: "14px",
+                    lineHeight: "1.6",
+                    color: "#333",
+                  }}
+                >
+                  <Typography variant="body1" style={{ fontWeight: "bold" }}>
+                    Creativity
+                  </Typography>
+                  Embracing innovation, originality, and creativity in the
+                  design and development of accessories that stand out for their
+                  uniqueness and distinctiveness. By fostering a culture of
+                  creativity within the company, the business can offer a
+                  diverse range of accessories that cater to different tastes
+                  and preferences, setting itself apart in a competitive market
+                  and continuously delighting customers with fresh and exciting
+                  designs.
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  padding: "10px",
+                  margin: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "5px",
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  color="text.secondary"
+                  style={{
+                    fontSize: "14px",
+                    lineHeight: "1.6",
+                    color: "#333",
+                  }}
+                >
+                  <Typography variant="body1" style={{ fontWeight: "bold" }}>
+                    Customer-Centricity
+                  </Typography>
+                  We place the customer at the heart of everything we do. We
+                  prioritize building strong relationships, understanding
+                  customer needs and preferences, and delivering exceptional
+                  service at every touchpoint. We target a personalized and
+                  rewarding experience for every customer, by fostering loyalty
+                  and trust in the brand.
+                </Typography>
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
+      </div>
     </div>
-  <Typography
-        variant="h6"
-        component="div"
-        className="text-center"
-        gutterBottom
-        style={{
-          color: "#012f01",
-          fontWeight: "bold",
-          marginBottom: "20px",
-        }}
-      >
-        Our Leadership
-      </Typography>
-
-      <div className="container-fluid">
-        <div className="row ml-4 mr-4">
-          <div className="col-lg-4 col-md-6 col-sm-12 mb-4 h-100">
-            <div className="card p-2">
-              <img
-                src={backgroundImage}
-                className="img-fluid"
-                alt="Responsive image"
-              />
-              <div className="card-body">
-                <h5 className="card-title header-card">President: Eric</h5>
-                <p className="card-text body-card">
-                  You are supporting ethical practices from small local farms
-                  and butchers who limit waste creating a more sustainable
-                  system
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-12 mb-4 h-100">
-            <div className="card p-2">
-              <img
-                src={backgroundImage}
-                className="img-fluid"
-                alt="Responsive image"
-              />
-              <div className="card-body">
-                <h5 className="card-title header-card">Vice-President: Max</h5>
-                <p className="card-text body-card">
-                  The by product of reducing the time your meat is cut and sold,
-                  sourcing from local farms that are grass fed and pasture
-                  raised results in a fresher, tastier cut of meat
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-12 mb-4 h-100">
-            <div className="card p-2">
-              <img
-                src={backgroundImage}
-                className="img-fluid"
-                alt="Responsive image"
-              />
-              <div className="card-body">
-                <h5 className="card-title header-card">Treasurer: Paul Sidze</h5>
-                <p className="card-text body-card">
-                  You know where your meat is coming from
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
-  <div>
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "100vh",
-        // backgroundImage: `url(${backgroundImage})`,
-        // backgroundPosition: "center",
-        // backgroundSize: "cover",
-        // backgroundRepeat: "no-repeat",
-      }}
-    >
-      <Card variant="outlined" sx={{ minWidth: 275, maxWidth: 800, margin: 3 }}>
-        <CardContent>
-         
-          <Typography
-            variant="h6"
-            component="div"
-            gutterBottom
-            style={{
-              color: "#012f01",
-              fontWeight: "bold",
-              marginBottom: "20px",
-            }}
-          >
-            Who are we?
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            style={{ fontSize: "15px", lineHeight: "1.6", color: "#333" }}
-          >
-            <bold>Whole animal butchery</bold> is the practice of receiving
-            whole animals carcasses and breaking it down instead of receiving
-            parts of an animal in bulk standard cuts.
-            <br />
-            <br />
-            This type of practice supports small local farms instead of large
-            feed lot/factory farms that are harmful to our planet.
-            <br />
-            <br />
-            It requires very experienced butchers who can customize cuts or
-            roasts for you the consumer depending on the season. Since we
-            receive the entire carcass, you will find a variety of cuts of beef,
-            pork and lamb that you do not see in traditional butcher shops.
-          </Typography>
-          <br />
-          <Typography
-            variant="h6"
-            component="div"
-            gutterBottom
-            style={{
-              color: "#012f01",
-              fontWeight: "bold",
-              marginBottom: "20px",
-            }}
-          >
-            What do we do?
-          </Typography>
-
-          <Box
-            sx={{
-              padding: "10px",
-              margin: "10px",
-              backgroundColor: "#f5f5f5",
-              borderRadius: "5px",
-            }}
-          >
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              style={{
-                fontSize: "14px",
-                lineHeight: "1.6",
-                color: "#333",
-              }}
-            >
-              <Typography variant="body1" style={{ fontWeight: "bold" }}>
-                Source Clarity
-              </Typography>
-              You know where your meat is coming from
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              padding: "10px",
-              margin: "10px",
-              backgroundColor: "#f5f5f5",
-              borderRadius: "5px",
-            }}
-          >
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              style={{
-                fontSize: "14px",
-                lineHeight: "1.6",
-                color: "#333",
-              }}
-            >
-              <Typography variant="body1" style={{ fontWeight: "bold" }}>
-                Sustainability
-              </Typography>
-              You are supporting ethical practices from small local farms and
-              butchers who limit waste creating a more sustainable system
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              padding: "10px",
-              margin: "10px",
-              backgroundColor: "#f5f5f5",
-              borderRadius: "5px",
-            }}
-          >
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              style={{
-                fontSize: "14px",
-                lineHeight: "1.6",
-                color: "#333",
-              }}
-            >
-              <Typography variant="body1" style={{ fontWeight: "bold" }}>
-                Freshness
-              </Typography>
-              The by product of reducing the time your meat is cut and sold,
-              sourcing from local farms that are grass fed and pasture raised
-              results in a fresher, tastier cut of meat
-            </Typography>
-          </Box>
-        </CardContent>
-      </Card>
-    </Box>
-  </div>
-</div>
-
   );
 };
 

@@ -1,4 +1,4 @@
-import Slider from "react-slick";
+import React, { useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
@@ -7,116 +7,126 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { Gallery } from "react-grid-gallery";
 import ICU from "i18next-icu";
-import HomeSlider from '../home-slider/HomeSlider'; // adjust the path according to your file structure
-import { Swiper, SwiperSlide } from 'swiper/react';
+import HomeSlider from "../home-slider/HomeSlider"; // adjust the path according to your file structure
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Card, CardContent, Typography, Box } from "@mui/material";
 // import logo from "../../images/logoMM.jpg";
-import backgroundImage from "../../images/homePageCamfoot.JPG";
+import backgroundImage from "../../images/OIP.jpeg";
 import "./Home.css";
 
 function Home() {
+  const [isExpandedPochette, setIsExpandedPochette] = useState(false);
+  const [isExpandedMirror, setIsExpandedMirror] = useState(false);
+  const [isExpandedBadge, setIsExpandedBadge] = useState(false);
   const images = [
     {
-      src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
-      original: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
-      width: 320,
+      src: require("../../images/gallery/mirrorEaster.jpg"),
+      original: require("../../images/gallery/mirrorEaster.jpg"),
+      width: 200,
       height: 174,
       tags: [
         { value: "Nature", title: "Nature" },
-        { value: "Flora", title: "Flora" },
+        { value: "Mirror", title: "Flora" },
       ],
       caption: "After Rain (Jeshu John - designerspics.com)",
     },
     {
-      src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-      original: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-      width: 320,
+      src: require("../../images/gallery/mirrorGrey.jpg"),
+      original:
+      require("../../images/gallery/mirrorGrey.jpg"),
+      width: 220,
       height: 212,
       caption: "Boats (Jeshu John - designerspics.com)",
     },
     {
-      src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-      original: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-      width: 320,
-      height: 212,
+      src: require("../../images/gallery/mirrorMix.jpg"),
+      original:
+      require("../../images/gallery/mirrorMix.jpg"),
+      width: 150,
+      height: 152,
       caption: "Color Pencils (Jeshu John - designerspics.com)",
     },
     {
-      src: "https://c7.staticflickr.com/9/8546/28354329294_bb45ba31fa_b.jpg",
-      original: "https://c7.staticflickr.com/9/8546/28354329294_bb45ba31fa_b.jpg",
-      width: 320,
+      src: require("../../images/gallery/mirrorMix2.jpg"),
+      original:
+      require("../../images/gallery/mirrorMix2.jpg"),
+      width: 220,
       height: 213,
       caption: "Red Apples with other Red Fruit (foodiesfeed.com)",
     },
     {
-      src: "https://c6.staticflickr.com/9/8890/28897154101_a8f55be225_b.jpg",
-      original: "https://c6.staticflickr.com/9/8890/28897154101_a8f55be225_b.jpg",
-      width: 320,
+      src: require("../../images/gallery/mirrors.jpg"),
+      original:
+      require("../../images/gallery/mirrors.jpg"),
+      width: 220,
       height: 183,
       caption: "37H (gratispgraphy.com)",
     },
     {
-      src: "https://c5.staticflickr.com/9/8768/28941110956_b05ab588c1_b.jpg",
-      original: "https://c5.staticflickr.com/9/8768/28941110956_b05ab588c1_b.jpg",
-      width: 240,
+      src: require("../../images/gallery/pochettecute.jpg"),
+      original:
+      require("../../images/gallery/mirrors.jpg"),
+      width: 270,
       height: 320,
       tags: [{ value: "Nature", title: "Nature" }],
       caption: "8H (gratisography.com)",
     },
     {
-      src: "https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_b.jpg",
-      original: "https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_b.jpg",
+      src: require("../../images/gallery/pochettePink.jpg"),
+      original:
+      require("../../images/gallery/pochettePink.jpg"),
       width: 320,
       height: 190,
       caption: "286H (gratisography.com)",
     },
     {
-      src: "https://c7.staticflickr.com/9/8569/28941134686_d57273d933_b.jpg",
-      original: "https://c7.staticflickr.com/9/8569/28941134686_d57273d933_b.jpg",
-      width: 320,
+      src: require("../../images/gallery/pochettesStanding.jpg"),
+      original:
+      require("../../images/gallery/pochettesStanding.jpg"),
+      width: 200,
       height: 148,
       tags: [{ value: "People", title: "People" }],
       caption: "315H (gratisography.com)",
     },
-    // {
-    //   src: "https://c6.staticflickr.com/9/8342/28897193381_800db6419e_b.jpg",
-    //   original: "https://c6.staticflickr.com/9/8342/28897193381_800db6419e_b.jpg",
-    //   width: 320,
-    //   height: 213,
-    //   caption: "201H (gratisography.com)",
-    // },
-    // {
-    //   src: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg",
-    //   original: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg",
-    //   alt: "Big Ben - London",
-    //   width: 248,
-    //   height: 320,
-    //   caption: "Big Ben (Tom Eversley - isorepublic.com)",
-    // },
-    // {
-    //   src: "https://c7.staticflickr.com/9/8785/28687743710_3580fcb5f0_b.jpg",
-    //   original: "https://c7.staticflickr.com/9/8785/28687743710_3580fcb5f0_b.jpg",
-    //   alt: "Red Zone - Paris",
-    //   width: 320,
-    //   height: 113,
-    //   tags: [{ value: "People", title: "People" }],
-    //   caption: "Red Zone - Paris (Tom Eversley - isorepublic.com)",
-    // },
-    // {
-    //   src: "https://c6.staticflickr.com/9/8520/28357073053_cafcb3da6f_b.jpg",
-    //   original: "https://c6.staticflickr.com/9/8520/28357073053_cafcb3da6f_b.jpg",
-    //   alt: "Wood Glass",
-    //   width: 313,
-    //   height: 320,
-    //   caption: "Wood Glass (Tom Eversley - isorepublic.com)",
-    // },
-    // {
-    //   src: "https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_b.jpg",
-    //   original: "https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_b.jpg",
-    //   width: 320,
-    //   height: 213,
-    //   caption: "Flower Interior Macro (Tom Eversley - isorepublic.com)",
-    // },
+    {
+      src: require("../../images/gallery/soniaExample.jpg"),
+      original: require("../../images/gallery/soniaExample.jpg"),
+      width: 420,
+      height: 313,
+      caption: "201H (gratisography.com)",
+    },
+    {
+      src: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg",
+      original: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg",
+      alt: "Big Ben - London",
+      width: 248,
+      height: 320,
+      caption: "Big Ben (Tom Eversley - isorepublic.com)",
+    },
+    {
+      src: require("../../images/gallery/pochetteBest.jpg"),
+      original: require("../../images/gallery/pochetteBest.jpg"),
+      alt: "Red Zone - Paris",
+      width: 200,
+      height: 213,
+      tags: [{ value: "People", title: "People" }],
+      caption: "Red Zone - Paris (Tom Eversley - isorepublic.com)",
+    },
+    {
+      src: require("../../images/gallery/badge.jpg"),
+      original: require("../../images/gallery/badge.jpg"),
+      alt: "Wood Glass",
+      width: 313,
+      height: 320,
+      caption: "Wood Glass (Tom Eversley - isorepublic.com)",
+    },
+    {
+      src: require("../../images/gallery/badge3.jpg"),
+      original: require("../../images/gallery/badge3.jpg"),
+      width: 320,
+      height: 213,
+      caption: "Flower Interior Macro (Tom Eversley - isorepublic.com)",
+    },
     // {
     //   src: "https://c4.staticflickr.com/9/8562/28897228731_ff4447ef5f_b.jpg",
     //   original: "https://c4.staticflickr.com/9/8562/28897228731_ff4447ef5f_b.jpg",
@@ -208,13 +218,11 @@ function Home() {
     //   height: 320,
     //   caption: "A photo by Matthew Wiebe. (unsplash.com)",
     // },
- ];
+  ];
   return (
     <div>
       <div className="home-container">
-      <h1 className="text-center text-camfoot">
-        Camfoot VFC
-        </h1>
+        <h1 className="text-center text-camfoot">OSOL Supplies Store</h1>
       </div>
 
       {/* <div className="text-light">
@@ -228,13 +236,24 @@ function Home() {
         <HomeSlider />
       </div>
 
+      <div>
+        {/* <h1 className="text-center quotes-font">"</h1> */}
+        <h5 className="text-center text-font-plus">Discover our creations - uniquely made for you.</h5>
+      </div>
+      <div className="parent-container">
+      <button className="find-out-more "
+            onClick={() =>
+              document.getElementById("shop-products").scrollIntoView()
+            }
+          >
+            Find Out More
+          </button>
+          </div>
       <hr className="line-spacing-top"></hr>
 
       <div>
         {/* <h1 className="text-center quotes-font">"</h1> */}
-        <h1 className="text-center text-font">
-          Our History
-        </h1>
+        <h1 id='shop-products' className="text-center text-font">Our Products</h1>
       </div>
 
       <hr className="line-spacing-bottom"></hr>
@@ -242,130 +261,78 @@ function Home() {
       <div>
         {/* <h1 className="text-center quotes-font">"</h1> */}
         <p className="text-center text-font-history">
-          We work with with farmers who feed their cows on a purely grass-based
-          diet.
-          <br />
-          We believe that this is how they are designed to live and feed, and we
-          take pride in our herds having a natural way of life, roaming the
-          hills and creating family bonds.
-          <br />
-          <br />
-          Healthy grass is a must as it contributes to our cows living totally
-          natural lives.
-          <br />
-          We have seen great results feeding our cows a grass-based diet over
-          the years, and it has been instrumental to helping us run our farm in
-          a nature-focused and cost-effective way
-          <br />
-          <br />
-          This is why take a lot of pride in the meat we sell to our customers.
+          <h3>Stylish and versatile POCHETTE</h3>
+          <h3>$15</h3>
+          {isExpandedPochette
+            ? `epitomizes elegance and sophistication with its compact dimensions and graceful silhouette, this pochette effortlessly elevates any ensemble, making it a coveted choice for those who appreciate convenience of having all your necessairy materials at hand while saving lifes.`
+            : `Crafted from high quality materials and adorned with exquisite details, this petite envelope-shaped clutch exudes a sense of luxury and refinement`}
+          <a
+            href="#"
+            className="expand-link"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsExpandedPochette(!isExpandedPochette);
+            }}
+          >
+            {isExpandedBadge ? "Show Less" : "Show More"}
+          </a>
         </p>
+
+        <p className="text-center text-font-history">
+          <h3>A diminutive yet opulent MIRROR DE POCHE</h3>
+          <h3>$10</h3>
+          {isExpandedMirror
+            ? `Encased in sumptuous materials and often adorned with intricate designs or embellishments, this compact looking glass presents a refined amalgamation of utility and elegance.`
+            : ` Fit for the discerning aesthete, the mirror de poche serves as a symbol of exquisite taste and refined luxury, offering a portable portal to beauty and grace wherever it is gracefully unveiled`}
+          <a
+            href="#"
+            className="expand-link"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsExpandedMirror(!isExpandedMirror);
+            }}
+          >
+            {isExpandedMirror ? "Show Less" : "Show More"}
+          </a>
+        </p>
+
+        <p className="text-center text-font-history">
+          <h3>Our BADGE is a testament to both utility and style</h3>
+          <h3>$7</h3>
+          {isExpandedBadge
+            ? `A symbol of refined practicality and timeless elegance, the badge carrier embodies a harmonious fusion of functionality and fashion, making it a must-have for the discerning individual who values both form and function.`
+            : `With its sleek and versatile form, the badge carrier serves as a distinguished statement piece, allowing its wearer to exude professionalism and sophistication while effortlessly carrying their identification or emblem of honor.`}
+          <a
+            href="#"
+            className="expand-link"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsExpandedBadge(!isExpandedBadge);
+            }}
+          >
+            {isExpandedBadge ? "Show Less" : "Show More"}
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <div>
+          <hr className="line-spacing-top"></hr>
+          <div>
+            <h1 className="text-center text-font">Our Gallery</h1>
+          </div>
+          <hr className="line-spacing-bottom"></hr>
+          <Gallery images={images} />
+        </div>
       </div>
 
       <hr className="line-spacing-top"></hr>
       <div>
-        <h1 className="text-center text-font">About Us</h1>
+        <h1 className="text-center text-font">Our Values</h1>
       </div>
       <hr className="line-spacing-bottom"></hr>
-
-      {/* <Card className="text-center" sx={{ margin: 3 }}> */}
-      {/* <CardContent > */}
-      <div className="text-center text-space">
-        <Typography
-          variant="h6"
-          component="div"
-          gutterBottom
-          style={{
-            color: "#012f01",
-            fontWeight: "bold",
-            marginBottom: "20px",
-          }}
-        >
-          Our mission statement
-        </Typography>
-        <Typography
-          variant="body1"
-          color="text.secondary"
-          className="text-buchery"
-          style={{ fontSize: "15px", lineHeight: "1.6", color: "#333" }}
-        >
-          <bold>Whole animal butchery</bold> is the practice of receiving whole
-          animals carcasses and breaking it down instead of receiving parts of
-          an animal in bulk standard cuts.
-          <br />
-          <br />
-          This type of practice supports small local farms instead of large feed
-          lot/factory farms that are harmful to our planet.
-          <br />
-          <br />
-          It requires very experienced butchers who can customize cuts or roasts
-          for you the consumer depending on the season. Since we receive the
-          entire carcass, you will find a variety of cuts of beef, pork and lamb
-          that you do not see in traditional butcher shops.
-        </Typography>
-        {/* </CardContent> */}
-        {/* </Card> */}
-      </div>
-
-      <div className="text-center text-space">
-        <Typography
-          variant="h6"
-          component="div"
-          gutterBottom
-          style={{
-            color: "#012f01",
-            fontWeight: "bold",
-            marginBottom: "20px",
-          }}
-        >
-          Our acitivies
-        </Typography>
-        <Typography
-          variant="body1"
-          color="text.secondary"
-          className="text-buchery"
-          style={{ fontSize: "15px", lineHeight: "1.6", color: "#333" }}
-        >
-          <ul>
-            <li>
-              <span>Volunteering: </span>
-              over the years we have been involved in numerous charitable activities
-            </li>
-            <li>
-              <span>Volunteering: </span>
-              over the years we have been involved in numerous charitable activities
-            </li>
-            <li>
-              <span>Volunteering: </span>
-              over the years we have been involved in numerous charitable activities
-            </li>
-            <li>
-              <span>Volunteering: </span>
-              over the years we have been involved in numerous charitable activities
-            </li>
-            
-          </ul>
-        </Typography>
-        {/* </CardContent> */}
-        {/* </Card> */}
-      </div>
-
       
-
       <br />
-      <Typography
-        variant="h6"
-        component="div"
-        className="text-center"
-        gutterBottom
-        style={{
-          color: "#012f01",
-          fontWeight: "bold",
-          marginBottom: "20px",
-        }}
-      >
-        Our Values
-      </Typography>
 
       <div className="container-fluid">
         <div className="row ml-4 mr-4">
@@ -377,11 +344,12 @@ function Home() {
                 alt="Responsive image"
               />
               <div className="card-body">
-                <h5 className="card-title header-card">Sustainability</h5>
+                <h5 className="card-title header-card">Quality</h5>
                 <p className="card-text body-card">
-                  You are supporting ethical practices from small local farms
-                  and butchers who limit waste creating a more sustainable
-                  system
+                  By prioritizing quality in every aspect of the design and
+                  production process, the company ensures that its accessories
+                  are durable, functional, and aesthetically pleasing, providing
+                  customers with products they can trust and enjoy.
                 </p>
               </div>
             </div>
@@ -394,11 +362,16 @@ function Home() {
                 alt="Responsive image"
               />
               <div className="card-body">
-                <h5 className="card-title header-card">Freshness</h5>
+                <h5 className="card-title header-card">Creativity</h5>
                 <p className="card-text body-card">
-                  The by product of reducing the time your meat is cut and sold,
-                  sourcing from local farms that are grass fed and pasture
-                  raised results in a fresher, tastier cut of meat
+                  Embracing innovation, originality, and creativity in the
+                  design and development of accessories that stand out for their
+                  uniqueness and distinctiveness. By fostering a culture of
+                  creativity within the company, the business can offer a
+                  diverse range of accessories that cater to different tastes
+                  and preferences, setting itself apart in a competitive market
+                  and continuously delighting customers with fresh and exciting
+                  designs.
                 </p>
               </div>
             </div>
@@ -411,9 +384,14 @@ function Home() {
                 alt="Responsive image"
               />
               <div className="card-body">
-                <h5 className="card-title header-card">Source Clarity</h5>
+                <h5 className="card-title header-card">Customer-Centricity</h5>
                 <p className="card-text body-card">
-                  You know where your meat is coming from
+                  We place the customer at the heart of everything we do.
+                  We prioritize building strong relationships,
+                  understanding customer needs and preferences, and delivering
+                  exceptional service at every touchpoint. We target a
+                  personalized and rewarding experience for every customer,
+                  by fostering loyalty and trust in the brand.
                 </p>
               </div>
             </div>
@@ -421,32 +399,6 @@ function Home() {
         </div>
       </div>
 
-      <div>
-      <div>
-        {/* <h1 className="text-center quotes-font">"</h1> */}
-        <hr className="line-spacing-top"></hr>
-      <div>
-        <h1 className="text-center text-font">Our Gallery</h1>
-      </div>
-      <hr className="line-spacing-bottom"></hr>
-        <Gallery images={images} />
-      </div>
-        
-      </div>
-
-      {/* <div className="container-fluid">
-      <div className="row ml-4 mr-4">
-        <div className="col-lg-4 col-md-6 col-sm-12 mb-4 h-100">
-          <div className="card p-2">
-            <img src={backgroundImage} className="img-fluid" alt="Responsive image" />
-            <div className="card-body">
-              <h5 className="card-title">Fresh Meat</h5>
-              <p className="card-text">Our meat is always fresh and never frozen</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> */}
     </div>
   );
 }

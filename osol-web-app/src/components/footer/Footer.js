@@ -20,7 +20,7 @@ export default function Footer() {
         <Typography variant="body2" color="white" align="center">
             {'Copyright © '}
             <Link color="inherit" href="http://localhost:3000/">
-                Camfoot United
+                Osol Supplies
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}

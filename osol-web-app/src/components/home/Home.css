@@ -19,7 +19,7 @@
   }
 
   .text-camfoot{
-    color: darkgreen;
+    color: burlywood;
     font-weight: 700;
     padding: 20px;
   }
@@ -42,6 +42,31 @@
     color: black;
     padding: 50px 200px;
     background-color: white;
+  }
+
+  .parent-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .find-out-more {
+    background-color: burlywood; /* Change the color to match your theme */
+    color: white; /* Make the text color white */
+    border: none; /* Remove the border */
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove the underline */
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer; /* Change the cursor when you hover over the button */
+    margin: 0 auto; /* Add automatic margins on the left and right */
+
+
+  }
+
+  .text-font-plus{
+    color: black;
+    padding: 50px 100px;
   }
   
   .home-heading {
@@ -108,11 +133,22 @@
     padding: 50px 200px;
   }
 
+  .expand-link {
+    color: darkolivegreen; /* Change the color to a blue */
+    text-decoration: none; /* Remove the underline */
+    font-weight: bold; /* Make the text bold */
+  }
+  
+  .expand-link:hover {
+    color: #0056b3; /* Change the color to a darker blue when hovered */
+    text-decoration: underline; /* Add an underline when hovered */
+  }
+
   @media only screen and (max-width: 450px){
     .text-font-history{
       color: white;
       padding: 20px 50px;
-      background-color: darkolivegreen;
+      background-color: burlywood;
     }
 
     .text-buchery{
