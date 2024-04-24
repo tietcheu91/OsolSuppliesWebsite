@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.04ca4d89.css",
+    "main.js": "/static/js/main.8fa2fc8b.js",
+    "static/js/453.4ee2e97e.chunk.js": "/static/js/453.4ee2e97e.chunk.js",
+    "static/media/card.JPG": "/static/media/card.1ecc3d2b04f41abc42f5.JPG",
+    "static/media/mainblue.JPG": "/static/media/mainblue.6f7ac980bc122bc011d7.JPG",
+    "static/media/mirror.JPG": "/static/media/mirror.6603a2e73be12fd3f9b4.JPG",
+    "static/media/mirror4.JPG": "/static/media/mirror4.cd9959c8003dc372079d.JPG",
+    "static/media/mainStanding.JPG": "/static/media/mainStanding.0110033007d82dbc63b6.JPG",
+    "static/media/mainPens.JPG": "/static/media/mainPens.187e85cda386eb726586.JPG",
+    "static/media/main.JPG": "/static/media/main.73ee40ad9b1d4162c1a9.JPG",
+    "static/media/badge.jpg": "/static/media/badge.7fc3698fedf553571561.jpg",
+    "static/media/mirrorEaster.jpg": "/static/media/mirrorEaster.2a236bfab46eed52ec4b.jpg",
+    "static/media/pochettesStanding.jpg": "/static/media/pochettesStanding.585b3bab84dab6e5634a.jpg",
+    "static/media/mirrorGrey.jpg": "/static/media/mirrorGrey.1e50f9f6062d3d2f29c5.jpg",
+    "static/media/pochetteBest.jpg": "/static/media/pochetteBest.c89b8d5cc2c30e5b5c08.jpg",
+    "static/media/mirrorMix2.jpg": "/static/media/mirrorMix2.43e5656a5e636b613789.jpg",
+    "static/media/badge3.jpg": "/static/media/badge3.6350e924db0e8ff8a653.jpg",
+    "static/media/pochettecute.jpg": "/static/media/pochettecute.69ebdf6e4661be90e9e7.jpg",
+    "static/media/mirrorMix.jpg": "/static/media/mirrorMix.51e55251f5091f70ce29.jpg",
+    "static/media/soniaExample.jpg": "/static/media/soniaExample.4c83cab2dde6794a9be0.jpg",
+    "static/media/pochettePink.jpg": "/static/media/pochettePink.de0d6cc1423db236cd00.jpg",
+    "static/media/mirrors.jpg": "/static/media/mirrors.1474ced4d523127630da.jpg",
+    "static/media/logoCamfoot.JPG": "/static/media/logoCamfoot.1224f853914be571ffc8.JPG",
+    "static/media/osolLogo.jpg": "/static/media/osolLogo.7f5c1ac325e0307561bf.jpg",
+    "static/media/OIP.jpeg": "/static/media/OIP.8dd8f3dbc9b9040370f3.jpeg",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "index.html": "/index.html",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "main.04ca4d89.css.map": "/static/css/main.04ca4d89.css.map",
+    "main.8fa2fc8b.js.map": "/static/js/main.8fa2fc8b.js.map",
+    "453.4ee2e97e.chunk.js.map": "/static/js/453.4ee2e97e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04ca4d89.css",
+    "static/js/main.8fa2fc8b.js"
+  ]
+}
