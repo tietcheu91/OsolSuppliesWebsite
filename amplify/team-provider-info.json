@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-osolapp-dev-14203-authRole",
+      "UnauthRoleArn": "arn:aws:iam::020970205151:role/amplify-osolapp-dev-14203-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::020970205151:role/amplify-osolapp-dev-14203-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-osolapp-dev-14203-deployment",
+      "UnauthRoleName": "amplify-osolapp-dev-14203-unauthRole",
+      "StackName": "amplify-osolapp-dev-14203",
+      "StackId": "arn:aws:cloudformation:us-east-2:020970205151:stack/amplify-osolapp-dev-14203/c3909821-0205-11ef-873b-022db1a4e4bf",
+      "AmplifyAppId": "d1ww4x6svv29vw"
+    }
+  }
+}

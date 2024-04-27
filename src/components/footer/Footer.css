@@ -1,5 +1,5 @@
 .footer-container {
-    /* position: fixed; */
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -8,7 +8,7 @@
     align-items: center;
     background-color: burlywood;
     color: #fff;
-    padding: 20px;
+    padding: 5px;
   }
   
   .footer-social a {

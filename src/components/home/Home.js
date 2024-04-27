@@ -6,6 +6,7 @@ import { I18nextProvider } from "react-i18next";
 import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { Gallery } from "react-grid-gallery";
+import Product from "../product/Product";
 import ICU from "i18next-icu";
 import HomeSlider from "../home-slider/HomeSlider"; // adjust the path according to your file structure
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -313,6 +314,19 @@ function Home() {
             {isExpandedBadge ? "Show Less" : "Show More"}
           </a>
         </p>
+      </div>
+
+      <div>
+        <div>
+          <hr className="line-spacing-top"></hr>
+          <div>
+            <h1 className="text-center text-font">Shop our products</h1>
+          </div>
+          <hr className="line-spacing-bottom"></hr>
+        </div>
+        <div>
+          <Product />
+      </div>
       </div>
 
       <div>

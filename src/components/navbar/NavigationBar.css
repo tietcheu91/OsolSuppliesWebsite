@@ -76,7 +76,7 @@ nav {
   float: left;
 }
 
-@media only screen and (max-width: 290px) {
+@media only screen and (max-width: 400px) {
   .camfoot-title{
     font-size: small;
     font-weight: 800;
@@ -84,9 +84,6 @@ nav {
     margin-top: 20px;
     color: white;
   }
-}
-
-@media only screen and (max-width: 700px) and (min-width: 300px) {
   header .nav-btn {
     visibility: visible;
     opacity: 1;
@@ -137,13 +134,68 @@ nav {
   .logo-navbar{
     width: 160px;
     padding: 20px;
-    margin-left: 70px;
+    margin-left: 180px;
+  }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 405px) {
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .three-bars-pos{
+    display: flex;
+    color: burlywood;
+  }
+  .changing-color{
+    color: burlywood;
+  }
+
+  header nav{
+    /* background-color: white; */
+    position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    z-index: 9999; /* any high value to ensure it's above other elements */
+
+  
+  }
+
+  header .show-nav{
+    background-color: #10121A;;
+    transform: translateY(100vh);
+  }
+
+  nav .nav-close-btn {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+	}
+
+	nav a {
+		font-size: 1.5rem;
+	}
+
+  .logo-navbar{
+    width: 160px;
+    padding: 20px;
+    margin-left: 210px;
   }
 }
 
 
 
-@media only screen and (min-width: 710px) {
+@media only screen and (min-width: 710px)  and (max-width: 810px) {
   header .nav-btn {
     visibility: visible;
     opacity: 1;
@@ -179,7 +231,7 @@ nav {
   .logo-navbar{
     width: 160px;
     padding: 20px;
-    margin-left: 260px;
+    margin-left: 560px;
   }
 
   header .show-nav{
