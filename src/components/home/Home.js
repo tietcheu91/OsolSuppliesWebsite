@@ -7,6 +7,9 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { Gallery } from "react-grid-gallery";
 import Product from "../product/Product";
+import CardProduct from '../product/CardProduct';
+import {getImageUrl} from '../../util';
+import star from '../../images/star.jpg';
 import ICU from "i18next-icu";
 import HomeSlider from "../home-slider/HomeSlider"; // adjust the path according to your file structure
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,6 +22,20 @@ function Home() {
   const [isExpandedPochette, setIsExpandedPochette] = useState(false);
   const [isExpandedMirror, setIsExpandedMirror] = useState(false);
   const [isExpandedBadge, setIsExpandedBadge] = useState(false);
+  const productColors =[
+    {
+      productNameOsol: "pochette",
+      colors: ["Orange", "Radish", "Cherry"],
+    },
+    {
+      productNameOsol: "mirror",
+      colors: ["Yellow", "Green", "Blue"],
+    },
+    {
+      productNameOsol: "badge",
+      colors: ["Red", "Purple"],
+    },
+  ];
   const images = [
     {
       src: require("../../images/gallery/mirrorEaster.jpg"),
@@ -33,40 +50,35 @@ function Home() {
     },
     {
       src: require("../../images/gallery/mirrorGrey.jpg"),
-      original:
-      require("../../images/gallery/mirrorGrey.jpg"),
+      original: require("../../images/gallery/mirrorGrey.jpg"),
       width: 220,
       height: 212,
       caption: "Boats (Jeshu John - designerspics.com)",
     },
     {
       src: require("../../images/gallery/mirrorMix.jpg"),
-      original:
-      require("../../images/gallery/mirrorMix.jpg"),
+      original: require("../../images/gallery/mirrorMix.jpg"),
       width: 150,
       height: 152,
       caption: "Color Pencils (Jeshu John - designerspics.com)",
     },
     {
       src: require("../../images/gallery/mirrorMix2.jpg"),
-      original:
-      require("../../images/gallery/mirrorMix2.jpg"),
+      original: require("../../images/gallery/mirrorMix2.jpg"),
       width: 220,
       height: 213,
       caption: "Red Apples with other Red Fruit (foodiesfeed.com)",
     },
     {
       src: require("../../images/gallery/mirrors.jpg"),
-      original:
-      require("../../images/gallery/mirrors.jpg"),
+      original: require("../../images/gallery/mirrors.jpg"),
       width: 220,
       height: 183,
       caption: "37H (gratispgraphy.com)",
     },
     {
       src: require("../../images/gallery/pochettecute.jpg"),
-      original:
-      require("../../images/gallery/mirrors.jpg"),
+      original: require("../../images/gallery/mirrors.jpg"),
       width: 270,
       height: 320,
       tags: [{ value: "Nature", title: "Nature" }],
@@ -74,16 +86,14 @@ function Home() {
     },
     {
       src: require("../../images/gallery/pochettePink.jpg"),
-      original:
-      require("../../images/gallery/pochettePink.jpg"),
+      original: require("../../images/gallery/pochettePink.jpg"),
       width: 320,
       height: 190,
       caption: "286H (gratisography.com)",
     },
     {
       src: require("../../images/gallery/pochettesStanding.jpg"),
-      original:
-      require("../../images/gallery/pochettesStanding.jpg"),
+      original: require("../../images/gallery/pochettesStanding.jpg"),
       width: 200,
       height: 148,
       tags: [{ value: "People", title: "People" }],
@@ -98,7 +108,8 @@ function Home() {
     },
     {
       src: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg",
-      original: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg",
+      original:
+        "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg",
       alt: "Big Ben - London",
       width: 248,
       height: 320,
@@ -237,33 +248,59 @@ function Home() {
         <HomeSlider />
       </div>
 
-      <div>
-        {/* <h1 className="text-center quotes-font">"</h1> */}
-        <h5 className="text-center text-font-plus">Discover our creations - uniquely made for you.</h5>
-      </div>
+      {/* <div> */}
+      {/* <h1 className="text-center quotes-font">"</h1> */}
+      {/* <h5 className="text-center text-font-plus">Discover our creations - uniquely made for you.</h5> */}
+      {/* </div> */}
       <div className="parent-container">
-      <button className="find-out-more "
+        <div className="find-out-more">
+          {/* <button className="find-out-more "
             onClick={() =>
               document.getElementById("shop-products").scrollIntoView()
-            }
-          >
-            Find Out More
-          </button>
-          </div>
-      <hr className="line-spacing-top"></hr>
+            } */}
+          {/* > */}
+          Our products
+          {/* </button> */}
+        </div>
+      </div>
+      {/* <hr className="line-spacing-top"></hr> */}
 
-      <div>
-        {/* <h1 className="text-center quotes-font">"</h1> */}
-        <h1 id='shop-products' className="text-center text-font">Our Products</h1>
+      {/* <div> */}
+      {/* <h1 className="text-center quotes-font">"</h1> */}
+      {/* <h1 id='shop-products' className="text-center text-font">Our Products</h1>
       </div>
 
-      <hr className="line-spacing-bottom"></hr>
+      <hr className="line-spacing-bottom"></hr> */}
 
       <div>
         {/* <h1 className="text-center quotes-font">"</h1> */}
         <p className="text-center text-font-history">
           <h3>Stylish and versatile POCHETTE</h3>
-          <h3>$15</h3>
+          <div className="contacts">
+          {productColors
+            .filter(product => product.productNameOsol === 'pochette')
+            .map((product, productIndex) =>
+              product.colors.map((color, colorIndex) => (
+                <CardProduct key={`${productIndex}-${colorIndex}`} color={color} imgCard={getImageUrl(product.productNameOsol)} product={product.productNameOsol} price={10} imgStar={star} country='CMR' rating={Math.floor(Math.random() * 6)} numberOfReview={Math.floor(Math.random() * 200)} />
+              ))
+            )
+          }
+          {/* <CardProduct  
+            // key={item.id}
+              // imgCard={getImageUrl(item)}
+              // data = {item}
+              imgStar={star}
+              rating = {Math.floor(Math.random() * 6)}
+              numberOfReview = {Math.floor(Math.random() * 200)}
+              // country = {item.country}
+              // productName = {item.name}
+              // productId = {item.id}
+              // price = {item.price}
+              // quantity = {item.quantity}
+              // isInCart = {() => isInCart(item.id)}
+              // addToCart = {() => addToCart(item)}
+              /> */}
+          </div>
           {isExpandedPochette
             ? `epitomizes elegance and sophistication with its compact dimensions and graceful silhouette, this pochette effortlessly elevates any ensemble, making it a coveted choice for those who appreciate convenience of having all your necessairy materials at hand while saving lifes.`
             : `Crafted from high quality materials and adorned with exquisite details, this petite envelope-shaped clutch exudes a sense of luxury and refinement`}
@@ -281,7 +318,17 @@ function Home() {
 
         <p className="text-center text-font-history">
           <h3>A diminutive yet opulent MIRROR DE POCHE</h3>
-          <h3>$10</h3>
+          {/* <h3>$10</h3> */}
+          <div className="contacts">
+          {productColors
+            .filter(product => product.productNameOsol === 'mirror')
+            .map((product, productIndex) =>
+              product.colors.map((color, colorIndex) => (
+                <CardProduct key={`${productIndex}-${colorIndex}`} color={color} imgCard={getImageUrl(product.productNameOsol)} product={product.productNameOsol} imgStar={star} price={8} country='IT' rating={Math.floor(Math.random() * 6)} numberOfReview={Math.floor(Math.random() * 200)} />
+              ))
+            )
+          }
+          </div>
           {isExpandedMirror
             ? `Encased in sumptuous materials and often adorned with intricate designs or embellishments, this compact looking glass presents a refined amalgamation of utility and elegance.`
             : ` Fit for the discerning aesthete, the mirror de poche serves as a symbol of exquisite taste and refined luxury, offering a portable portal to beauty and grace wherever it is gracefully unveiled`}
@@ -299,7 +346,17 @@ function Home() {
 
         <p className="text-center text-font-history">
           <h3>Our BADGE is a testament to both utility and style</h3>
-          <h3>$7</h3>
+          {/* <h3>$7</h3> */}
+          <div className="contacts">
+          {productColors
+            .filter(product => product.productNameOsol === 'badge')
+            .map((product, productIndex) =>
+              product.colors.map((color, colorIndex) => (
+                <CardProduct key={`${productIndex}-${colorIndex}`} color={color} product={product.productNameOsol} imgCard={getImageUrl(product.productNameOsol)} price={7} imgStar={star} country='USA' rating={Math.floor(Math.random() * 6)} numberOfReview={Math.floor(Math.random() * 200)} />
+              ))
+            )
+          }
+          </div>
           {isExpandedBadge
             ? `A symbol of refined practicality and timeless elegance, the badge carrier embodies a harmonious fusion of functionality and fashion, making it a must-have for the discerning individual who values both form and function.`
             : `With its sleek and versatile form, the badge carrier serves as a distinguished statement piece, allowing its wearer to exude professionalism and sophistication while effortlessly carrying their identification or emblem of honor.`}
@@ -316,7 +373,7 @@ function Home() {
         </p>
       </div>
 
-      <div>
+      {/* <div>
         <div>
           <hr className="line-spacing-top"></hr>
           <div>
@@ -327,7 +384,7 @@ function Home() {
         <div>
           <Product />
       </div>
-      </div>
+      </div> */}
 
       <div>
         <div>
@@ -340,7 +397,7 @@ function Home() {
         </div>
       </div>
 
-      <hr className="line-spacing-top"></hr>
+      {/* <hr className="line-spacing-top"></hr>
       <div>
         <h1 className="text-center text-font">Our Values</h1>
       </div>
@@ -411,8 +468,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
-
+      </div> */}
     </div>
   );
 }

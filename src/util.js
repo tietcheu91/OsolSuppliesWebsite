@@ -2,7 +2,7 @@
 export function getImageUrl(item) {
     return (
         require('../src/images/' +
-      item.name +
-      '.jpg'
+      item +
+      '.JPG'
     ));
   }

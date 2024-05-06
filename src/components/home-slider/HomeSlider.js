@@ -83,7 +83,8 @@
 
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide, Navigation } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 
 import slide_image_1 from '../../images/card.JPG';
 import slide_image_2 from '../../images/main.JPG';
@@ -129,18 +130,22 @@ export default function HomeSlider() {
         grabCursor={true}
         centeredSlides={false}
         slidesPerView={'auto'}
-        loop={false}
+        loop={true}
         spaceBetween={5}
-        pagination={{ clickable: true }}
+        // pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false
+        }}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
           depth: 100,
           modifier: 1,
-          slideShadows: true,
+          // slideShadows: true,
         }}
-        modules={[ Pagination]}
+        modules={[]}
         className="mySwiper"
       >
         <SwiperSlide>
